@@ -12,6 +12,7 @@ function ChargerClasse($classe)
 }
 spl_autoload_register("ChargerClasse");
 function afficherPage($chemin, $page, $titre) {
+	require  'php/View/Head.php';
 	require  'php/View/Header.php';
 	require ($chemin . $page);
 	require 'php/View/Footer.php';
@@ -40,6 +41,15 @@ DbConnect::init();
 				afficherPage ( 'Php/View/', 'FormDeconnection.php', "Deconnection" );
 				break;
 			}
+		case "ClientAction":
+			afficherPage('Php/View/',"ClientAction","");
+			break;
+		case "ClientForm":
+			afficherPage('Php/View/',"ClientForm","Gestion des messages");
+			break;
+		case "ClientListe":
+			afficherPage('Php/View/',"ClientListe","Liste des messages");
+			break;
 	}
 } else { // Sinon, on affiche la page principale du site
 	afficherPage ( 'Php/View/', 'FormConnection.php', "Connection" );

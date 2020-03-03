@@ -1,18 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
-    <?php
-//Si le titre est indiqué, on l'affiche entre les balises <title>
-echo (!empty($titre))?'<title>'.$titre.'</title>':'<title> sans titre </title>';
-?>
-    <link href="CSS/style.css" rel="stylesheet" media="screen" type="text/css" title="Design">
-    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ff2d38d481.js" crossorigin="anonymous"></script>
-</head>
 
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      JoGeek
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="//github.io/jo_geek" target="_blank">Github</a>
+    <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
+    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
+    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
+    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
+  </div>
+</div>
 <?php
 //Attribution des variables de session
 $lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
