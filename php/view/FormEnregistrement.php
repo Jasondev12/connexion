@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 
 if (empty($_POST['pseudo'])) // Si la variable est vide, on est sur la page de formulaire
@@ -64,7 +63,7 @@ else //On est dans le cas traitement
         echo'<p>'.$pseudo_erreur1.'</p>';
         echo'<p>'.$pseudo_erreur2.'</p>';
         echo'<p>'.$mdp_erreur.'</p>';
-        
+        header("refresh:8,url=index.php?action=nouveauUser");
         echo'<p>Cliquez <a href="index.php?action=nouveauUser">ici</a> pour recommencer</p>';
     }
 }

@@ -14,11 +14,12 @@ spl_autoload_register("ChargerClasse");
 function afficherPage($chemin, $page, $titre) {
 	require  'php/View/Head.php';
 	require  'php/View/Header.php';
-	require ($chemin . $page);
+	require ($chemin .$page);
 	require 'php/View/Footer.php';
 }
 
 DbConnect::init();
+session_start();
 // A l'include de la page Route, le code suivant est exécuté
 // Si la variable $get existe, on exploite les informations pour afficher la bonne page
  if (isset ( $_GET ['action'] )) {
@@ -42,13 +43,13 @@ DbConnect::init();
 				break;
 			}
 		case "ClientAction":
-			afficherPage('Php/View/',"ClientAction","");
+			afficherPage('Php/View/',"ClientAction.php","");
 			break;
 		case "ClientForm":
-			afficherPage('Php/View/',"ClientForm","Gestion des messages");
+			afficherPage('Php/View/',"ClientForm.php","Gestion des messages");
 			break;
 		case "ClientListe":
-			afficherPage('Php/View/',"ClientListe","Liste des messages");
+			afficherPage('Php/View/',"ClientListe.php","Liste des messages");
 			break;
 	}
 } else { // Sinon, on affiche la page principale du site

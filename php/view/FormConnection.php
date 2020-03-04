@@ -1,5 +1,4 @@
 <?php
-session_start ();
 
 
 if (! isset ( $_POST ['pseudo'] )) // On est dans la page de formulaire
@@ -23,10 +22,12 @@ if (! isset ( $_POST ['pseudo'] )) // On est dans la page de formulaire
 			$_SESSION ['id'] = $utilisateur->getIdUser ();
 			$message = '<p>Bienvenue ' . $utilisateur->getPseudo () . ', vous êtes maintenant connecté!</p>' ?>
 			<p>Cliquez <a href="index.php?action=deconnect">ici</a> pour déconnecter</p>
+			<?php header("refresh:6,url=index.php?action=ClientListe")?>
 		<?php } else // Acces pas OK !
 		{
-			$message = '<p>Une erreur s\'est produite 	    pendant votre identification.<br /> Le mot de passe ou le pseudo
-            entré n\'est pas correcte.</p>';
+			$message = '<p>Une erreur s\'est produite pendant votre identification.<br /> Le mot de passe ou le pseudo
+			entré n\'est pas correcte.</p>';
+			header("refresh:3,url=index.php?action=connect");
 		}
 	}
 	echo $message ;

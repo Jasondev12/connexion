@@ -1,9 +1,16 @@
+<?php
+//Attribution des variables de session
+$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
+$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
+$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
+?>
 
+<body>
 <div class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div class="nav-title">
-      JoGeek
+      Website
     </div>
   </div>
   <div class="nav-btn">
@@ -14,18 +21,14 @@
     </label>
   </div>
   
+
   <div class="nav-links">
-    <a href="//github.io/jo_geek" target="_blank">Github</a>
-    <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
-    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
-    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
-    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
+  <?php if ($pseudo!=""){ 
+        echo '<div class="centrer">'.$pseudo.'</div>
+              <a href="index.php?action=deconnect">Se déconnecter</a>';
+            //   header("refresh:1,url=");
+        }
+    ?>
+   
   </div>
 </div>
-<?php
-//Attribution des variables de session
-$lvl=(isset($_SESSION['level']))?(int) $_SESSION['level']:1;
-$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
-$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
-?>
-
